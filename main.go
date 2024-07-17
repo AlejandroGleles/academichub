@@ -1,18 +1,20 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/AlejandroGleles/academichub/config"
 	"github.com/AlejandroGleles/academichub/router"
 )
 
-func main() {
+var (
+	logger config.Logger
+)
 
+func main() {
+	logger = *config.GetLogger("main")
 	//Initialize config
 	err := config.Init()
 	if err != nil {
-		fmt.Println(err)
+		logger.Errorf("config initialization error: %v", err)
 		return
 	}
 	//initialize router
