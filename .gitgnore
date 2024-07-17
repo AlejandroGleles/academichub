@@ -1,0 +1,17 @@
+#binario
+
+*.exe
+*.dil
+*.so
+*.dylib
+
+# test binario
+
+*.test
+
+# covarge
+
+*.out
+
+Db folder
+db/
