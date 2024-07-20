@@ -37,3 +37,19 @@ func (r *CreateOpenigRequest) Validate() error {
 	//}
 	return nil
 }
+
+//update
+type UpdateOpenigRequest struct {
+	Nome  string `Json:"nome"`
+	Email string `Json:"email"`
+	CPF   string `Json:"cpf"`
+}
+
+func (r *UpdateOpenigRequest) Validate() error {
+	//if any field is provided, validation is truthy
+	if r.Nome != "" || r.Email != "" || r.CPF != "" {
+		return nil
+	}
+	//if none of the fields were providad return false
+	return fmt.Errorf("at least one valid field must be provided")
+}
