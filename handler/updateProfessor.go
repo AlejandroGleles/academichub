@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func UpdateOpenigHandler(ctx *gin.Context) {
+func UpdateProfessorHandler(ctx *gin.Context) {
 	request := UpdateOpenigRequest{}
 
 	ctx.BindJSON(&request)

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func ListOpenigHandler(ctx *gin.Context) {
+func ListProfessorHandler(ctx *gin.Context) {
 	professor := []schemas.Professor{}
 
 	if err := db.Find(&professor).Error; err != nil {
