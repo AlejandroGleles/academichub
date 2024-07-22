@@ -34,11 +34,12 @@ func InitializeSqlite() (*gorm.DB, error) {
 		return nil, err
 	}
 	//migrate the schemas
-	err = db.AutoMigrate(&schemas.Professor{})
+	err = db.AutoMigrate(&schemas.Professor{}, &schemas.Aluno{}, &schemas.Turma{}, &schemas.Atividade{})
 	if err != nil {
 		logger.Errorf("sqlite automigration error: %v", err)
 		return nil, err
 	}
 	//return the DB
 	return db, nil
+
 }

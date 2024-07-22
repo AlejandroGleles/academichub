@@ -7,8 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CreateOpenigHandler(ctx *gin.Context) {
-	request := CreateOpenigRequest{}
+func CreateAlunoHandler(ctx *gin.Context) {
+	request := CreateAlunoRequest{}
 
 	ctx.BindJSON(&request)
 
@@ -18,17 +18,17 @@ func CreateOpenigHandler(ctx *gin.Context) {
 		return
 	}
 
-	professor := schemas.Professor{
-		Nome:  request.Nome,
-		Email: request.Email,
-		CPF:   request.CPF,
+	aluno := schemas.Aluno{
+		Nome:      request.Nome,
+		Matricula: request.Matricula,
+		Turma:     request.Turma,
 	}
 
-	if err := db.Create(&professor).Error; err != nil {
+	if err := db.Create(&aluno).Error; err != nil {
 		logger.Errorf("error creating openig: %v", err.Error())
-		sendError(ctx, http.StatusInternalServerError, "error creating professor on database")
+		sendError(ctx, http.StatusInternalServerError, "error creating aluno on database")
 		return
 	}
-	sendSuccess(ctx, "create-proffesor", professor)
+	sendSuccess(ctx, "create-proffesor", aluno)
 
 }
