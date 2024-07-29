@@ -10,13 +10,16 @@ var (
 )
 
 func main() {
+	// Initialize the logger
 	logger = *config.GetLogger("main")
-	//Initialize config
+
+	// Initialize config
 	err := config.Init()
 	if err != nil {
 		logger.Errorf("config initialization error: %v", err)
 		return
 	}
-	//initialize router
+
+	// Initialize routes and run the server
 	router.Initialize()
 }

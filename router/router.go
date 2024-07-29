@@ -1,14 +1,19 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func Initialize() {
-	//Initialize router
+	// Create a new Gin router
 	router := gin.Default()
 
-	//Initialize routes
+	// Configure CORS
+	PermissionCors(router)
+
+	// Initialize routes
 	initializeRoutes(router)
 
-	//Run the server
+	// Run the server
 	router.Run(":8080")
 }

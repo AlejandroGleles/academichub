@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcademicHub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="root">
+    <!-- Header -->
+    <div class="header-container">
+      <div class="header-bars" onclick="toggleSidebar()">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="header-title">AcademicHub</div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="closebtn" onclick="toggleSidebar()">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 18L18 6M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sidebar-content">
+        <div class="sidebar-item" onclick="showSection('home')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20v-6M4 12l8 8 8-8-8-8-8 8z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>Home
+        </div>
+        <div class="sidebar-item" onclick="showSection('professor')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4v12M4 8h8M4 12h8M4 16h8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>Professor
+        </div>
+        <div class="sidebar-item" onclick="showSection('student')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20v-6M4 12l8 8 8-8-8-8-8 8z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>Aluno
+        </div>
+        <div class="sidebar-item" onclick="showSection('classes')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4v12M4 8h8M4 12h8M4 16h8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>Turmas
+        </div>
+        <div class="sidebar-item" onclick="showSection('grades')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4v12M4 8h8M4 12h8M4 16h8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>Notas
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="content">
+      <div id="professor-management" class="hidden">
+        <h2>Gerenciamento de Professores</h2>
+        <button class="btn btn-success" onclick="showForm('add')">Adicionar Professor</button>
+        <button class="btn btn-warning" onclick="showForm('edit')">Editar Professor</button>
+        <button class="btn btn-primary" onclick="showForm('list')">Listar Professores</button>
+        <button class="btn btn-danger" onclick="showForm('delete')">Apagar Professor</button>
+        
+        <div id="form-container" class="mt-4">
+          <!-- Formulários serão inseridos aqui -->
+        </div>
+      </div>
+      <!-- Outras seções -->
+    </div>
+  </div>
+  <script src="src/cadastro.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

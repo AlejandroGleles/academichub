@@ -20,7 +20,7 @@ func initializeRoutes(router *gin.Engine) {
 	}
 
 	{
-		//handler aluno
+		//routs aluno
 		v1.GET("/aluno", handler.ShowAlunoHandler)
 		v1.POST("/aluno", handler.CreateAlunoHandler)
 		v1.DELETE("/aluno", handler.DeleteAlunoHandler)
@@ -30,7 +30,7 @@ func initializeRoutes(router *gin.Engine) {
 	}
 
 	{
-		//handle turma
+		//routs turma
 		v1.GET("/turma", handler.ShowTurmaHandler)
 		v1.POST("/turma", handler.CreateTurmaHandler)
 		v1.DELETE("/turma", handler.DeleteAlunoHandler)
@@ -40,7 +40,7 @@ func initializeRoutes(router *gin.Engine) {
 	}
 
 	{
-		//handler atividade
+		//routs atividade
 		v1.GET("/atividade", handler.ShowAtividadeHandler)
 		v1.POST("/atividade", handler.CreateAtividadeHandler)
 		v1.DELETE("/atividade", handler.DeleteAtividadeHandler)

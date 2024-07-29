@@ -19,6 +19,6 @@ type AlunoResponse struct {
 	UpdatedAt time.Time `Json:"updateAt"`
 	DeletedAt time.Time `Json:"deletedAt,omitempty"`
 	Nome      string    `Json:"nome"`
-	Matricula string    `Json:"matricula"`
+	Matricula int       `Json:"matricula"`
 	Turma     string    `Json:"turma"`
 }
