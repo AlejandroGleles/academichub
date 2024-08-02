@@ -94,6 +94,10 @@ function listarP() {
                     <p><strong>Nome:</strong> ${professor.Nome}</p>
                     <p><strong>E-mail:</strong> ${professor.Email}</p>
                     <p><strong>CPF:</strong> ${professor.CPF}</p>
+                    <div class="card-actions">
+                        <button class="btn btn-warning" onclick="updateProfessor(${professor.ID})">Editar</button>
+                        <button class="btn btn-danger" onclick="deletarProfessor(${professor.ID})">Deletar</button>
+                    </div>
                 `;
                 listaDiv.appendChild(professorCard);
             });
@@ -106,6 +110,59 @@ function listarP() {
         document.getElementById('lista').innerHTML = '<p>Failed to load data.</p>';
     });
 }
+
+function updateProfessor(id) {
+    alert(`Editar professor com ID: ${id}`);
+
+    const nome = document.getElementById('Nome').value;
+    const email = document.getElementById('Email').value;
+    const cpf = document.getElementById('CPF').value;
+
+    const professor = { Nome: nome, Email: email, CPF: cpf };
+
+    fetch(`http://localhost:8080/api/v1/professor?id=${id}`, {
+        method: 'PUT',
+        header: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(professor)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        alert('Professor atualizado com sucesso!');
+        listarP(); // Atualiza a lista de professores
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Erro ao atualizar professor');
+    });
+}
+
+
+function deletarProfessor(id) {
+    alert(`Deletar professor com ID: ${id}`);
+    fetch(`http://localhost:8080/api/v1/professor?id=${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao deletar professor');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+        alert('Professor deletado com sucesso!');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Erro ao deletar professor');
+    });
+}
+
+
 
 //lista aluno
 

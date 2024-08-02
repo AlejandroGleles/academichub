@@ -47,6 +47,7 @@ body {
     z-index: 1000; /* Garante que o sidebar esteja acima do conteúdo */
 }
 
+
 .sidebar.open {
     left: 0;
 }
@@ -189,3 +190,12 @@ h2 {
 .professor-card p {
     margin: 5px 0;
 }
+
+/* Estilo para as ações dos cartões */
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+

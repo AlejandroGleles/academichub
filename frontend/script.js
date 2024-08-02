@@ -42,26 +42,7 @@ function showForm(formType) {
                 cProfessor(); // Chama a função do arquivo cadastro.js
             });
             break;
-        case 'edit':
-            formContainer.innerHTML = `
-                <h3>Editar Professor</h3>
-                <form id="edit-professor-form">
-                    <div class="form-group">
-                        <label for="id">ID do Professor:</label>
-                        <input type="text" id="id" name="id" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" name="name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Disciplina:</label>
-                        <input type="text" id="subject" name="subject" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-warning">Editar</button>
-                </form>
-            `;
-            break;
+        
         case 'list':
             formContainer.innerHTML = `
                 <h3>Listar Professores</h3>
@@ -72,17 +53,6 @@ function showForm(formType) {
             // Adicione o listener para listar professores
             listarP(); // Certifique-se de que listarP() está disponível globalmente
             break;
-        case 'delete':
-            formContainer.innerHTML = `
-                <h3>Apagar Professor</h3>
-                <form id="delete-professor-form">
-                    <div class="form-group">
-                        <label for="id">ID do Professor:</label>
-                        <input type="text" id="id" name="id" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-danger">Apagar</button>
-                </form>
-            `;
-            break;
+        
     }
 }
