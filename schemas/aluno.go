@@ -9,16 +9,16 @@ import (
 type Aluno struct {
 	gorm.Model
 	Nome      string
-	Matricula int
+	Matricula float64
 	Turma     string
 }
 
 type AlunoResponse struct {
-	ID        uint      `Json:"id"`
-	CreatedAt time.Time `Json:"crestedAt"`
-	UpdatedAt time.Time `Json:"updateAt"`
-	DeletedAt time.Time `Json:"deletedAt,omitempty"`
-	Nome      string    `Json:"nome"`
-	Matricula int       `Json:"matricula"`
-	Turma     string    `Json:"turma"`
+	ID        uint       `json:"id"`
+	CreatedAt time.Time  `json:"createdAt"`
+	UpdatedAt time.Time  `json:"updatedAt"`
+	DeletedAt *time.Time `json:"deletedAt,omitempty"`
+	Nome      string     `json:"nome"`
+	Matricula float64    `json:"matricula"`
+	Turma     string     `json:"turma"`
 }

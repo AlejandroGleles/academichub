@@ -31,8 +31,8 @@ func UpdateAlunoHandler(ctx *gin.Context) {
 	if request.Nome != "" {
 		aluno.Nome = request.Nome
 	}
-	if request.Matricula <= 0 {
-		aluno.Matricula = request.Matricula
+	if request.Matricula >= 0 {
+		aluno.Matricula = float64(request.Matricula)
 	}
 	if request.Turma != "" {
 		aluno.Turma = request.Turma

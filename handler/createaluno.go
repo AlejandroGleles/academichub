@@ -20,7 +20,7 @@ func CreateAlunoHandler(ctx *gin.Context) {
 
 	aluno := schemas.Aluno{
 		Nome:      request.Nome,
-		Matricula: request.Matricula,
+		Matricula: float64(request.Matricula),
 		Turma:     request.Turma,
 	}
 

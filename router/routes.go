@@ -11,6 +11,8 @@ func initializeRoutes(router *gin.Engine) {
 	v1 := router.Group("/api/v1")
 	{
 		//routs professor
+		v1.GET("/dashboard", handler.DashboardHandler)
+
 		v1.GET("/professor", handler.ShowProfessorHandler)
 		v1.POST("/professor", handler.CreateProfessorHandler)
 		v1.DELETE("/professor", handler.DeleteProfessorHandler)

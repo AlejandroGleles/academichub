@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar - Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../src/professor/cad_professor.js"></script>
+    <script src="../src/aluno/cad_aluno.js"></script>
+
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin: 15px 0;
+        }
+        .dashboard {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sistema Escolar</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="cadastro_professores.html">Professores</a></li>
+                <li class="nav-item"><a class="nav-link" href="cadastro_turmas.html">Turmas</a></li>
+                <li class="nav-item"><a class="nav-link" href="cadastra_aluno.html">Alunos</a></li>
+                <li class="nav-item"><a class="nav-link" href="cadastro_atividades.html">Atividades</a></li>
+                <li class="nav-item"><a class="nav-link" href="cadastro_notas.html">Notas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="container dashboard">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Total de Professores</h5>
+                        <p id="totalProfessores" class="card-text">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Total de Turmas</h5>
+                        <p id="totalTurmas" class="card-text">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Total de Alunos</h5>
+                        <p id="totalAlunos" class="card-text">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Total de Atividades</h5>
+                        <p id="totalAtividades" class="card-text">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de Professores -->
+    <div class="container mt-4">
+        <h2>Professores</h2>
+        <div class="row" id="professoresLista">
+            <!-- Os cards de professores serão inseridos aqui dinamicamente -->
+        </div>
+        <h2>Alunos</h2>
+        <div class="row" id="alunoLista">
+            <!-- Os cards de professores serão inseridos aqui dinamicamente -->
+        </div>
+    </div>
+
+
+    </script>
+</body>
+</html>
